@@ -1,0 +1,24 @@
+:host {
+	--bg-top: #fff7e8;
+	--bg-bottom: #e8f4ff;
+	--ink: #1e293b;
+
+	color: var(--ink);
+	font-family: "Space Grotesk", "Segoe UI", sans-serif;
+	display: block;
+	min-height: 100dvh;
+	background:
+		radial-gradient(circle at 90% 10%, #ffd7a8 0, transparent 40%),
+		radial-gradient(circle at 10% 90%, #bae6fd 0, transparent 45%),
+		linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+.app-shell {
+	min-height: 100dvh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+.app-content {
+	display: block;
+}

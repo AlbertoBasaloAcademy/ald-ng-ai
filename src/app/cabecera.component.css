@@ -1,0 +1,30 @@
+.cabecera {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem;
+}
+
+.cabecera h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f766e;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.tagline {
+  margin-top: 0.5rem;
+  color: #475569;
+}
+
+@media (max-width: 640px) {
+  .cabecera {
+    padding-top: 1.5rem;
+  }
+}
