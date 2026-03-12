@@ -21,8 +21,8 @@ A **frontend web application** for offering bookings for rocket launches.
 
 ## API Overview
 - Runs locally on http://localhost:3000
-- [Endpoints](./api-endpoint.md) for rockets, launches, customers, and bookings.
-- [Models](./api-models.md) defining the data structures for each resource.
+- [Endpoints](./api.endpoint.md) for rockets, launches, customers, and bookings.
+- [Models](./api.models.md) defining the data structures for each resource.
 
 >[!NOTE]
 > Backend API at https://github.com/AlbertoBasalo/astro-bookings-express
