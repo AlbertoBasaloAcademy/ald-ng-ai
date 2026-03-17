@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.home {
+  margin: 0 auto;
+  width: min(900px, 100%);
+  padding: 1.5rem;
+}
+
+.home-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.rocket-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}

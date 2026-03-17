@@ -1,0 +1,23 @@
+:host {
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+.rocket-name {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  color: #0f172a;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #fde68a 0%, #fef3c7 100%);
+}
+
+.rocket-meta {
+  margin: 0.25rem 0;
+  color: #374151;
+}
