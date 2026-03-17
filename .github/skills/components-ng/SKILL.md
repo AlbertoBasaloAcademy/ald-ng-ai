@@ -52,4 +52,6 @@ description: Components with Angular. Use whe generating any component, page, or
 
 ### Examples
 
--  Presentational component example: ./presentational.component.ts
+- Presentational component example: ./presentational.component.ts
+- Routed page example (TypeScript): ./routed.page.ts
+- Routed page example (HTML): ./routed.page.html

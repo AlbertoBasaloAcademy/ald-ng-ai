@@ -1,0 +1,13 @@
+<section class="rocket-detail-page" [attr.aria-busy]="isLoading()">
+  <h1>{{ title() }}</h1>
+
+  @if (isLoading()) {
+    <p>{{ loadingLabel() }}</p>
+  } @else if (rocket(); as selectedRocket) {
+    <app-rocket-detail [rocket]="selectedRocket" />
+  } @else {
+    <p>{{ notFoundLabel() }}</p>
+  }
+
+  <a routerLink="/">{{ backToHomeLabel() }}</a>
+</section>

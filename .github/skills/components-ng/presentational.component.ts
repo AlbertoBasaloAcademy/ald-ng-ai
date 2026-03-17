@@ -5,6 +5,7 @@ import {
   input,
 } from '@angular/core';
 
+//import { Rocket } from '../../core/models/rocket.model';
 type Rocket = {
   id: string;
   name: string;
@@ -12,9 +13,11 @@ type Rocket = {
   capacity: number;
 };
 
-function formatRocketRange(range: string): string {
-  return range.charAt(0).toUpperCase() + range.slice(1).replace(/-/g, ' ');
-}
+// import { formatRocketRange } from '../../shared/utils';
+
+// function formatRocketRange(range: string): string {
+//   return range.charAt(0).toUpperCase() + range.slice(1).replace(/-/g, ' ');
+// }
 
 
 @Component({
