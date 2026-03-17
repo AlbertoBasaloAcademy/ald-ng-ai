@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.site-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}

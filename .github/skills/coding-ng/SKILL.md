@@ -38,8 +38,9 @@ Set the this defaults for CLI generation in `angular.json`:
 
 - Use `@if`, `@else`, `@switch` for conditional rendering.
 - Use `@for` with `track item.id` for iterating over collections.
-- Use auto-closing tags for void elements (e.g., `<app-header />`, `<app-user-form />`).
+- Prefer auto-closing tags for Angular components with no projected content (e.g., `<app-header />`, `<app-user-form />`).
 - Use `[attribute]` for computed attributes with dynamic values.
+- No hardcoded strings in templates, use signals from component class.
 
 ### Types
 
