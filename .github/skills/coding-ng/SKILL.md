@@ -20,52 +20,6 @@ Set the this defaults for CLI generation in `angular.json`:
 }
 ```
 
-## Components
-
-- Componentes are **standalone**, no modules are needed.
-- On push **change detection** is set by default for better performance.
-- Generate components using the CLI: `ng g c folder/component-name`
-- Do not make direct calls to APIs in components, use services instead.
-
-### Syntax
-
-- Use `inject()` instead of constructor **injection**.
-- Use `input()` and `output()` **signals** for component communication.
-- Use `signal()` and `computed()` for **state management**.
-- Use `effects()` for exceptional handling of **side effects** in components.
-
-### Templates
-
-- Use `@if`, `@else`, `@switch` for conditional rendering.
-- Use `@for` with `track item.id` for iterating over collections.
-- Prefer auto-closing tags for Angular components with no projected content (e.g., `<app-header />`, `<app-user-form />`).
-- Use `[attribute]` for computed attributes with dynamic values.
-- No hardcoded strings in templates, use signals from component class.
-
-### Types
-
-### Routed 
-
-- Suffixed with `Page` type (e.g., `UserPage`). Ex: `ng g c routes/user --type=page`
-- Export the class as `default` for simpler imports at routes.
-- Receive route parameters via signals with `input.required<Type>()`.
-- **Injected** with services to manage data and business logic.
-- No raw HTML in their templates, use presentational components to encapsulate UI logic.
-
-### Presentational
-
-- **Focused on UI** and presentation, with minimal logic.
-- No injected services, receive data and emit events through **input and output signals**.
-
-### Shared Reusable
-
-- Presentational components placed in a `shared` folder, **reusable** across the application.
-- Examples: `Button`, `Card`, `List`, `Table`, `Form`, etc.
-
-### Core 
-
-- Presentational components placed in a `core` folder, used **only once by the app** component
-- Examples: `Header`, `Footer`, `Navbar`, `Sidebar`, `Dialog`, `Modal`, `Toast`, etc.
 
 ## Services
 
@@ -87,35 +41,6 @@ Set the this defaults for CLI generation in `angular.json`:
 - Leverages `interceptors` for cross-cutting concerns like:
   - authentication, error handling, data caching, and logging.
 
-## Routing
-
-- Configure routing at `app.config.ts` file with:
-  - `provideRouter(routes, withComponentInputBinding()),` function.
-For each route create:
-- A **routed** component with type `Page` (e.g., `UserPage`) 
-- A **presentational** component for the UI (e.g., `UserProfile`).
-- A **service** to manage data and business logic for the route (e.g., `UserService`).
-- Optionally:
-  - a **guard** to protect the route based on authentication or permissions.
-  - a **resolver** to fetch data before activating the route.
-  - a **repository service** to handle data fetching and transformations.
-  
-```bash
-# for route /users/:id
-ng g c routes/user --type=page # make it default export
-ng g c routes/user/user-profile
-ng g s routes/user/user  
-```
-
-- Define routes in a separate `routes` folder with `app.routes.ts` file.
-
-```ts
-export const routes: Route[] = [
-  {
-    path: 'users/:id ',
-    loadComponent: () => import('./routes/user/user.page'),
-  }
-```
 
 ## HTTP communication
 

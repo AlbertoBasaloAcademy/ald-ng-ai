@@ -1,0 +1,14 @@
+<div class="page-container">
+  @if (rocket(); as rocketData) {
+    <app-rocket-detail [rocket]="rocketData" />
+    <div class="navigation">
+      <a routerLink="/">{{ backButtonText() }}</a>
+    </div>
+  } @else {
+    <div class="error-message">
+      <h2>{{ notFoundTitle() }}</h2>
+      <p>{{ notFoundMessage() }}</p>
+      <a routerLink="/">{{ backButtonText() }}</a>
+    </div>
+  }
+</div>

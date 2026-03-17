@@ -5,6 +5,18 @@
   background-color: #ffffff;
 }
 
+.rocket-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rocket-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .rocket-name {
   margin: 0 0 0.5rem;
   font-size: 1.125rem;

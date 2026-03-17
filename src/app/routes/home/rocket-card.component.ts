@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Rocket } from '../../core/models/rocket.model';
 
 @Component({
-  selector: 'li[app-rocket-card]',
+  selector: '[app-rocket-card]',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './rocket-card.component.html',
   styleUrl: './rocket-card.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

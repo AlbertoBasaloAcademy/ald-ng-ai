@@ -1,14 +1,15 @@
 <section class="home">
   <h2 class="home-title">{{ title() }}</h2>
-  <ul class="rocket-list">
+  <div class="rocket-list">
     @for (rocket of rockets(); track rocket.id) {
-      <li
+      <div
         app-rocket-card
         [rocket]="rocket"
         [rangeLabel]="rangeLabel"
         [capacityLabel]="capacityLabel"
         [seatsLabel]="seatsLabel"
       >
-      </li>
-    }</ul>
+      </div>
+    }
+  </div>
 </section>

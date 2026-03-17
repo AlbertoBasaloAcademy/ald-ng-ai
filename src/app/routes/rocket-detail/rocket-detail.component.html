@@ -1,0 +1,20 @@
+<section class="rocket-detail">
+  <h2 class="rocket-title">{{ rocket().name }}</h2>
+
+  <div class="rocket-info">
+    <div class="info-card">
+      <h3>{{ rangeLabel() }}</h3>
+      <p>{{ formattedRange() }}</p>
+    </div>
+
+    <div class="info-card">
+      <h3>{{ capacityLabel() }}</h3>
+      <p>{{ rocket().capacity }} {{ seatsUnit() }}</p>
+    </div>
+
+    <div class="info-card">
+      <h3>{{ rocketIdLabel() }}</h3>
+      <p>{{ rocket().id }}</p>
+    </div>
+  </div>
+</section>
