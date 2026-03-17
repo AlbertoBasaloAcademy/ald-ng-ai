@@ -1,4 +1,13 @@
 {
+  // "chat.agentFilesLocations": {
+  //   ".agents/agents": true
+  // },
+  // "chat.agentSkillsLocations": {
+  //   ".agents/skills": true,
+  // },
+  // "chat.promptFilesLocations": {
+  //   ".agents/prompts": true
+  // },
   "chat.useAgentsMdFile": true,
   "chat.useAgentSkills": true,
   "explorer.compactFolders": false,
