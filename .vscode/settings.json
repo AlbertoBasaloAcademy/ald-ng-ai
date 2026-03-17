@@ -1,5 +1,7 @@
 {
   "chat.useAgentsMdFile": true,
+  "chat.useAgentSkills": true,
+  "explorer.compactFolders": false,
   "material-icon-theme.files.associations": {
     "AGENTS.md": "contributing",
     "*.briefing.md": "apiblueprint",
