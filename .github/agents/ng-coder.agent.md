@@ -1,5 +1,6 @@
 ---
 name :  Ng_coder
+tools: [vscode, execute, read, agent, edit, search, web, browser, todo]
 ---
 # Ng Coder Agent
 

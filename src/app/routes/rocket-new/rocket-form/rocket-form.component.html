@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()">
+  <label for="name">Name</label>
+  <input
+    id="name"
+    type="text"
+    [ngModel]="name()"
+    (ngModelChange)="name.set($event)"
+    [disabled]="disabled()"
+    name="name"
+    required
+  />
+
+  <label for="range">Range</label>
+  <select
+    id="range"
+    [ngModel]="range()"
+    (ngModelChange)="range.set($event)"
+    [disabled]="disabled()"
+    name="range"
+  >
+    @for (r of ranges; track r) {
+      <option [value]="r">{{ r }}</option>
+    }
+  </select>
+
+  <label for="capacity">Capacity</label>
+  <input
+    id="capacity"
+    type="number"
+    [ngModel]="capacity()"
+    (ngModelChange)="capacity.set(+$event)"
+    [disabled]="disabled()"
+    name="capacity"
+    min="1"
+    required
+  />
+
+  <button type="submit" [disabled]="disabled()">Save Rocket</button>
+</form>

@@ -1,0 +1,7 @@
+<section>
+  <h1>{{ title }}</h1>
+  @if (errorMessage()) {
+    <p class="error">{{ errorMessage() }}</p>
+  }
+  <app-rocket-form [disabled]="isSaving()" (save)="onSave($event)" />
+</section>
