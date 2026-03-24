@@ -29,6 +29,5 @@
     "prompts": "prompts",
     "skills": "prompts",
   },
-  "window.zoomLevel": 2,
   "workbench.browser.enableChatTools": true
 }
