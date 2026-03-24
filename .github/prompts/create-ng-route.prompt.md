@@ -1,6 +1,6 @@
 ---
-name: routing-ng
-description: Generates Angular routes with page components, presentational components and services.
+name : Create Ng Route
+agent: Ng_coder
 ---
 
 # Angular Routing
