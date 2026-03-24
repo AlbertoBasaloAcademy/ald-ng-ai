@@ -13,6 +13,25 @@
   font-size: 1.5rem;
 }
 
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+
+.home-create-link {
+  color: #0b3d91;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-create-link:hover,
+.home-create-link:focus-visible {
+  text-decoration: underline;
+}
+
 .rocket-list {
   margin: 0;
   padding: 0;

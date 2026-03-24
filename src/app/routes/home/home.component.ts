@@ -17,4 +17,6 @@ export class HomeComponent {
   readonly rangeLabel = 'Range';
   readonly capacityLabel = 'Capacity';
   readonly seatsLabel = 'seats';
+  readonly createRocketLabel = 'Create new rocket';
+  readonly createRocketHref = '/rockets/new';
 }
