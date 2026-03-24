@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
+import { rxResource } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { RocketNewRepository } from './rocket-new.service';
 import { RocketFormComponent } from './rocket-form/rocket-form.component';
@@ -17,19 +18,33 @@ export default class RocketNewPage {
   readonly #router = inject(Router);
 
   readonly title = 'New Rocket';
-  readonly isSaving = signal(false);
-  readonly errorMessage = signal<string | null>(null);
+
+  readonly #formValue = signal<RocketFormValue | undefined>(undefined);
+
+  readonly #saveResource = rxResource({
+    request: () => this.#formValue(),
+    loader: ({ request }) => this.#repository.save$(request!),
+  });
+
+  readonly isSaving = this.#saveResource.isLoading;
+  readonly errorMessage = computed(() => {
+    const err = this.#saveResource.error();
+    return err ? 'Failed to save rocket. Please try again.' : null;
+  });
+
+  constructor() {
+    effect(() => {
+      if (this.#saveResource.value()) {
+        this.#router.navigate(['/']);
+      }
+    });
+    effect(() => {
+      const err = this.#saveResource.error();
+      if (err) console.error(err);
+    });
+  }
 
   onSave(formValue: RocketFormValue): void {
-    this.isSaving.set(true);
-    this.errorMessage.set(null);
-    this.#repository.save$(formValue).subscribe({
-      next: () => this.#router.navigate(['/']),
-      error: (err) => {
-        console.error(err);
-        this.errorMessage.set('Failed to save rocket. Please try again.');
-        this.isSaving.set(false);
-      },
-    });
+    this.#formValue.set(formValue);
   }
 }
