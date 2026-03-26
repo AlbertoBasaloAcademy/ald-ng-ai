@@ -1,10 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API_BASE_URL } from '../../core/api.config';
 import type { Rocket } from '../../core/models/rocket.model';
 import type { RocketFormValue } from './rocket-new.model';
-
-const API_BASE_URL = 'http://localhost:3000';
 
 @Injectable({ providedIn: 'root' })
 export class RocketNewRepository {

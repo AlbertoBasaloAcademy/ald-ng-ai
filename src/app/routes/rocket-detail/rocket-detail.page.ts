@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { rxResource } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
-import { Rocket } from '../../core/models/rocket.model';
 import { RocketDetailService } from './rocket-detail.service';
 import { RocketDetailComponent } from './rocket-detail.component';
 
@@ -14,19 +14,19 @@ import { RocketDetailComponent } from './rocket-detail.component';
 })
 export default class RocketDetailPage {
   readonly id = input.required<string>();
-  readonly rocketDetailService = inject(RocketDetailService);
+  readonly #rocketDetailService = inject(RocketDetailService);
 
-  readonly rocket = signal<Rocket | undefined>(undefined);
+  readonly #rocketResource = rxResource({
+    request: () => this.id(),
+    loader: ({ request }) => this.#rocketDetailService.getRocketById$(request),
+  });
+
+  readonly rocket = computed(() => this.#rocketResource.value());
+  readonly isLoading = this.#rocketResource.isLoading;
+  readonly hasError = computed(() => !!this.#rocketResource.error());
 
   // Computed messages
   readonly notFoundTitle = computed(() => 'Rocket not found');
   readonly notFoundMessage = computed(() => `The rocket with ID "${this.id()}" does not exist.`);
   readonly backButtonText = computed(() => '← Back to Home');
-
-  constructor() {
-    effect(() => {
-      const rocketId = this.id();
-      this.rocket.set(this.rocketDetailService.getRocketById(rocketId));
-    });
-  }
 }

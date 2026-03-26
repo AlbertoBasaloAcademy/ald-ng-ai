@@ -1,32 +1,16 @@
-import { Injectable, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, computed, inject } from '@angular/core';
+import { rxResource } from '@angular/core/rxjs-interop';
 import { Rocket } from '../../core/models/rocket.model';
+import { API_BASE_URL } from '../../core/api.config';
 
 @Injectable({ providedIn: 'root' })
 export class HomeService {
-  readonly rockets = signal<Rocket[]>([
-    {
-      id: 'rk-falcon-lite',
-      name: 'Falcon Lite',
-      range: 'suborbital',
-      capacity: 4
-    },
-    {
-      id: 'rk-orbiter-one',
-      name: 'Orbiter One',
-      range: 'orbital',
-      capacity: 6
-    },
-    {
-      id: 'rk-luna-express',
-      name: 'Luna Express',
-      range: 'moon',
-      capacity: 8
-    },
-    {
-      id: 'rk-ares-voyager',
-      name: 'Ares Voyager',
-      range: 'mars',
-      capacity: 10
-    }
-  ]);
+  readonly #httpClient = inject(HttpClient);
+
+  readonly #rocketsResource = rxResource({
+    loader: () => this.#httpClient.get<Rocket[]>(`${API_BASE_URL}/rockets`),
+  });
+
+  readonly rockets = computed(() => this.#rocketsResource.value() ?? []);
 }
