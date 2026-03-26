@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+.launch-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.launch-page-header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.launch-page-eyebrow,
+.launch-page-title,
+.launch-page-subtitle,
+.launch-page-state {
+  margin: 0;
+}
+
+.launch-page-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4f657f;
+}
+
+.launch-page-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #112038;
+}
+
+.launch-page-subtitle,
+.launch-page-state {
+  color: #445b74;
+  max-width: 48rem;
+}
+
+.launch-page-state {
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: #f6f8fb;
+}
+
+.launch-page-state-error {
+  background: #fdeeee;
+  color: #8f2f2f;
+}

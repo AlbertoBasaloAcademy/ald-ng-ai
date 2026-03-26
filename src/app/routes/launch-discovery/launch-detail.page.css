@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.launch-detail-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.launch-detail-back {
+  color: #30537d;
+  text-decoration: none;
+}
+
+.launch-detail-card,
+.launch-detail-state {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: #f6f8fb;
+}
+
+.launch-detail-eyebrow,
+.launch-detail-title,
+.launch-detail-meta,
+.launch-detail-state {
+  margin: 0;
+}
+
+.launch-detail-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.launch-detail-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4f657f;
+}
+
+.launch-detail-status {
+  text-transform: capitalize;
+}
+
+.launch-detail-state-error {
+  background: #fdeeee;
+  color: #8f2f2f;
+}

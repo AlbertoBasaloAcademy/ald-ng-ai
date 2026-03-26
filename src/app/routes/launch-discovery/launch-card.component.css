@@ -1,0 +1,62 @@
+:host {
+  display: block;
+}
+
+.launch-card {
+  list-style: none;
+}
+
+.launch-link {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid #d5dde8;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+  color: #122033;
+  text-decoration: none;
+}
+
+.launch-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.launch-rocket,
+.launch-date,
+.launch-meta {
+  margin: 0;
+}
+
+.launch-rocket {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #47607a;
+}
+
+.launch-date {
+  font-size: 1.2rem;
+}
+
+.launch-meta {
+  color: #38506a;
+}
+
+.launch-status {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #dff4e8;
+  color: #1b6a43;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.launch-status-unavailable {
+  background: #fbe4e4;
+  color: #8f2f2f;
+}

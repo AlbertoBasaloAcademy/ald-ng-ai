@@ -21,5 +21,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
+  it('should include a launches route', () => {
+    const router = TestBed.inject(Router);
+
+    expect(router.config.some(route => route.path === 'launches')).toBeTrue();
+  });
+
 
 });

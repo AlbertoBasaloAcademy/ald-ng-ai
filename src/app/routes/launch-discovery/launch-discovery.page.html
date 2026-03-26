@@ -1,0 +1,19 @@
+<section class="launch-page">
+  <div class="launch-page-header">
+    <p class="launch-page-eyebrow">Launch Discovery</p>
+    <h2 class="launch-page-title">{{ title }}</h2>
+    <p class="launch-page-subtitle">{{ subtitle }}</p>
+  </div>
+
+  @if (isLoading()) {
+    <p class="launch-page-state">Loading launches...</p>
+  } @else {
+    @if (errorMessage()) {
+      <p class="launch-page-state launch-page-state-error">{{ errorMessage() }}</p>
+    } @else if (isEmpty()) {
+      <p class="launch-page-state">No launches are available to browse.</p>
+    } @else {
+      <app-launch-discovery [launches]="launches()" />
+    }
+  }
+</section>

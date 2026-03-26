@@ -1,3 +1,7 @@
 <header class="site-header">
-  <h1 class="site-title">{{ title() }}</h1>
+  <a routerLink="/" class="site-title">{{ title() }}</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a routerLink="/" class="site-nav-link">Rockets</a>
+    <a routerLink="/launches" class="site-nav-link">Launches</a>
+  </nav>
 </header>

@@ -3,13 +3,30 @@
 }
 
 .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #e5e7eb;
   background-color: #ffffff;
 }
 
 .site-title {
+  text-decoration: none;
+  color: inherit;
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.2;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-nav-link {
+  text-decoration: none;
+  color: inherit;
 }

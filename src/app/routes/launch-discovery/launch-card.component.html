@@ -1,0 +1,10 @@
+<a [routerLink]="['/launches', launch().id]" class="launch-link">
+  <div class="launch-card-header">
+    <p class="launch-rocket">{{ launch().rocketName }}</p>
+    <span class="launch-status" [class.launch-status-unavailable]="launch().availableSeats === 0">{{ launch().status }}</span>
+  </div>
+  <h3 class="launch-date">{{ formattedDate() }}</h3>
+  <p class="launch-meta">Price: ${{ launch().price }}</p>
+  <p class="launch-meta">{{ availabilityText() }}</p>
+  <p class="launch-meta">{{ minimumPassengersText() }}</p>
+</a>

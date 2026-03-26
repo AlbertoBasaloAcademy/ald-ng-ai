@@ -1,15 +1,20 @@
 # NG AI
 
-- {Agents_Folder}:`/.github` You are a coding agent configured at `/.github` folder.
-- {Project_Folder}:`/project` The project context will be at `project` folder.
+- Root folder: `/`
+- Agents folder: `/.github`
+- Project folder: `/project`
+- Agents file: `/AGENTS.md`
 
 ## Product Overview
 
-This is a sample Angular project using AI coding best practices, including TypeScript strictness, signal-based reactivity, and performance optimizations. It serves as a template for building modern Angular applications with AI-generated code.
+AstroBookings is a frontend SPA for rocket launch bookings.
+The app consumes a local API and showcases Angular best practices.
 
 ## Technical Implementation
 
-This will be SPA with Angular v19+, using standalone components, signals for state management, and optimized build configurations. The project will include features like SSR, routing, and a sample component demonstrating best practices.
+Use Angular v19+ with standalone components and strict TypeScript.
+Prefer signals for local state and clear route-level separation.
+Use API-first flows for rockets, launches, customers, and bookings.
 
 ### Tech Stack
 - **Language**: TypeScript
@@ -38,10 +43,10 @@ npm run build
 
 ```txt
 ├── AGENTS.md             # This file with instructions for AI agents
-├── {Agents_Folder}/      # Agents related files (skills, specs, etc)
+├── .github/              # Agents related files (skills, specs, etc)
 |   ├── prompts/          # Reusable prompts directory
 |   └── skills/           # Custom agent skills
-├── {Project_Folder}/     # Project related files (specs, plans, etc)
+├── project/              # Project related files (specs, plans, etc)
 |   ├── PRD.md            # Product Requirements Document
 |   ├── ADD.md            # Architectural Design Document
 |   └── specs/            # Specifications and plans
@@ -70,4 +75,6 @@ npm run build
 - Code and documentation must be in English.
 - Chat responses must be in the language of the user prompt.
 - Sacrifice grammar for conciseness when needed to fit response limits.
-- When using templates, ensure to replace {placeholders} with actual values.
+- Replace all template placeholders with real project paths.
+- Keep docs concise and easy to scan for agent orchestration.
+- Prioritize feature outcomes over low-level implementation detail.

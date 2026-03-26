@@ -1,0 +1,20 @@
+<section class="launch-detail-page">
+  <a routerLink="/launches" class="launch-detail-back">← Back to launches</a>
+
+  @if (isLoading()) {
+    <p class="launch-detail-state">Loading launch details...</p>
+  } @else {
+    @if (errorMessage()) {
+      <p class="launch-detail-state launch-detail-state-error">{{ errorMessage() }}</p>
+    } @else if (launch()) {
+      <div class="launch-detail-card">
+        <p class="launch-detail-eyebrow">{{ launch()!.rocketName }}</p>
+        <h2 class="launch-detail-title">{{ formattedDate() }}</h2>
+        <p class="launch-detail-meta">Status: <span class="launch-detail-status">{{ launch()!.status }}</span></p>
+        <p class="launch-detail-meta">Price per seat: ${{ launch()!.price }}</p>
+        <p class="launch-detail-meta">Available seats: {{ launch()!.availableSeats }}</p>
+        <p class="launch-detail-meta">Minimum passengers: {{ launch()!.minPassengers }}</p>
+      </div>
+    }
+  }
+</section>
